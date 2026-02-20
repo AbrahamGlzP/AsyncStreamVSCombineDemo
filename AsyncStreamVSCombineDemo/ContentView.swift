@@ -9,13 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            CombineView()
+                .tabItem {
+                    Label("Combine", systemImage: "arrow.triangle.merge")
+                }
+            AsyncStreamView()
+                .tabItem {
+                    Label("AsyncStream", systemImage: "arrow.triangle.2.circlepath")
+                }
         }
-        .padding()
     }
 }
 
